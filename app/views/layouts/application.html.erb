@@ -21,6 +21,13 @@
       <li><%= link_to "sign up", new_user_registration_path %></li>
       <li><%= link_to "login", new_user_session_path %></li>
     <% end %>
+    <%= notice%>
+    
     <%= yield %>
+    
+    <footer>
+      <p class="footer-text">CopyRight Infratop.inc</p>
+    </footer>
+    
   </body>
 </html>
