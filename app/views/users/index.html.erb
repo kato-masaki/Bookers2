@@ -1,4 +1,4 @@
-<div class="profile-container">
+<div class="profile-container"> 
   <h1>User info</h1>
   <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
   <p>name：<%= @user.name %></p>
@@ -16,12 +16,15 @@
   <%= f.submit 'Create Book' %>
 <% end %>
 
-<% @books.each do |book| %>
+<% @users.each do |user| %>
 <div>
-  <%= attachment_image_tag book.user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
-  <%= link_to book_path(book.id) do %>
-  <p>Title：<%= book.title %></p>
+  <h1>Users</h1>
+  <p>image:
+  <%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
+  </p>
+  <p>name：<%= user.name %></p>
+  <%= link_to user_path(user.id) do %>
+  <p>Show</p>
   <% end %>
-  <p>Opinion：<%= book.body %></p>
 </div>
 <% end %>

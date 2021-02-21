@@ -18,7 +18,7 @@
 
 <% @books.each do |book| %>
 <div>
-  <%= attachment_image_tag book.user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
+  <p>投稿者：<%= book.user.name %></p>
   <%= link_to book_path(book.id) do %>
   <p>Title：<%= book.title %></p>
   <% end %>
