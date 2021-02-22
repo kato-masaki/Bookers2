@@ -1,10 +1,17 @@
-<div class="profile-container">
+
   <h1>User info</h1>
   <%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
-  <p>name：<%= user.name %></p>
-  <p>introduction：<%= user.introduction %></p>
-</div>
+  <table class="table table-striped">
+    <tbody>
+    <tr></tr>
+    <tr><th>name</th><th><%= user.name %></th></tr>
+    <tr class="bg-white"><th>introduction</th><th><%= user.introduction %></th></tr>
+    </tbody>
+  </table>
 
-<p><%= link_to edit_user_path(user) do %>
+
+<p class="btn btn-outline-secondary btn-sm btn-block">
+<%= link_to edit_user_path(user) do %>
 <i class="fas fa-user-cog"></i>
-</p><% end %>
+<% end %>
+</p>
